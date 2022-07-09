@@ -1,5 +1,9 @@
 import videojs from "video.js";
-import "./My-PlayToggle.js"
+import "./My-PlayToggle.js";
+import "./My-ControlPanel.js";
+import "./My-ControlProgress.js";
+import "./My-TimeDuration.js";
+
 
 const Component = videojs.getComponent("Component");
 
@@ -13,7 +17,10 @@ class Luan_ControlBar extends Component {
 
 Luan_ControlBar.prototype.options_ = {
   children: [
-    "MyPlayToggle"
+    "MyPlayToggle",
+    "MyControlPanel",
+    "MyControlProgress",
+    "MyTimeDuration",
   ],
 };
 

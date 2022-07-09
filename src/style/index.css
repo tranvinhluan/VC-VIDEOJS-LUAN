@@ -2,6 +2,11 @@ h1 {
     color: red;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .vjs-Luan__control-bar {
     position: absolute;
     width: 100%;
@@ -9,48 +14,67 @@ h1 {
     left: 0;
     right: 0;
     height: 50px;
-    background-color: #790303;
-    /* background-color: rgba(43, 51, 63, 0.7); */
+    background-color: #f55353;
+    display: flex;
+    align-items: center;
 }
 
-.vjs-Luan__play-control {
-    position: relative;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+/* play-control + panel-control */
+.vjs-Luan__play-control,
+.vjs-Luan__panel-control {
     height: 100%;
-    width: 4em;
-    flex: none;
+    width: 40px;
 }
 
-.vjs-Luan__play-control .vjs-Luan__icon-placeholder {
+.vjs-Luan__play-control > .vjs-Luan__icon-placeholder,
+.vjs-Luan__panel-control > .vjs-Luan__icon-placeholder {
     font-family: VideoJS;
     font-weight: normal;
     font-style: normal;
+    cursor: pointer;
 }
 
-.vjs-Luan__play-control .vjs-Luan__icon-placeholder::before {
+.vjs-Luan__play-control > .vjs-Luan__icon-placeholder::before {
     content: "\f101";
+    font-size: 30px;
 }
 
-.vjs-Luan__play-control>.vjs-Luan__icon-placeholder:before {
-    font-size: 3em;
-    line-height: 1.67;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.vjs-Luan__panel-control > .vjs-Luan__icon-placeholder::before {
+    content: "\f107";
+    font-size: 30px;
 }
 
-.vjs-Luan__play-control>.vjs-Luan__icon-placeholder:before {
-    font-size: 3em;
-    line-height: 1.67;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* progress control */
+.vjs-Luan__progress-control {
+    cursor: pointer;
+    flex: auto;
+    display: flex;
+    align-items: center;
+    min-width: 4em;
+    touch-action: none;
+}
+
+.vjs-Luan__progress-holder {
+    flex: auto;
+    transition: all 0.2s;
+    height: 0.3em;
+    margin: 0 10px;
+    background-color: blue;
+}
+
+/* time duration */
+.vjs-Luan__time-duration {
+    flex: none;
+    font-size: 1em;
+    line-height: 3em;
+    min-width: 2em;
+    width: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.vjs-Luan__time-duration-display {
+    background-color: green;
+    height: 2em;
+    width: 30px;
 }
